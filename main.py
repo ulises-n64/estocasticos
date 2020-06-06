@@ -70,46 +70,111 @@ def lectura_datos():
     costos=np.array(costos) #Convertimos a numpy array
     return (k, m, s, matriztrans, politica, costos)
 def main():
-    
+    otro_metodo=1
+    while(otro_metodo==1):
 
-    print("Hola usuario.")
-    print("¿Qué metodo quieres resolver hoy?")
-    print("1. Enumeracion exhaustiva de politicas")
-    print("2. Solucion por programacion lineal")
-    print("3. Metodos de mejoramiento de politicas")
-    print("4. Mejoramiento de politica con descuento")
-    print("5. Metodo de aproximaciones sucesivas")
-    while True:
-        try:
-            metodo = int(input(""))
-            if (metodo == 1 or metodo == 2 or metodo == 3 or metodo == 4 or metodo == 5):
-                break
-                
-            else:
+        print("Hola usuario.")
+        print("¿Qué metodo quieres resolver hoy?")
+        print("1. Enumeracion exhaustiva de politicas")
+        print("2. Solucion por programacion lineal")
+        print("3. Metodos de mejoramiento de politicas")
+        print("4. Mejoramiento de politica con descuento")
+        print("5. Metodo de aproximaciones sucesivas")
+        while True:
+            try:
+                metodo = int(input(""))
+                if (metodo == 1 or metodo == 2 or metodo == 3 or metodo == 4 or metodo == 5):
+                    break
+
+                else:
+                    print("Por favor digita un numero valido")
+
+
+
+            except ValueError:
                 print("Por favor digita un numero valido")
-                
-            
-
-        except ValueError:
-            print("Por favor digita un numero valido")
 
 
 
-    if metodo == 1:
-        print("Resolveremos por Enumeracion exhaustiva de politicas")
-    elif metodo == 2:
-        print("Resolveremos por Solucion por programacion lineal")
-    elif metodo == 3:
-        print("Resolveremos por Metodos de mejoramiento de politicas")
-        
-        mejoramientoPolitica(m,k, s, matriztrans, politica, costos)
-    elif metodo == 4:
-        print("Resolveremos por Mejoramiento de politica con descuento")
-        
-        mejoramientoPoliticaDescuento(m,k,s,matriztrans,politica,costos)
-    elif metodo == 5:
-        print("Resolveremos por Metodo de aproximaciones sucesivas")
-      
+        if metodo == 1:
+            print("Resolveremos por Enumeracion exhaustiva de politicas")
+
+            print("¿Desas resolver otro metodo con los mismos datos? Presiona 1 para si 0 para no")
+            while True:
+                try:
+                    otro_metodo = int(input(""))
+                    if (otro_metodo == 1 or otro_metodo == 0 ):
+                        break
+
+                    else:
+                        print("Por favor digita un numero valido")
+
+                except ValueError:
+                    print("Por favor digita un numero valido")
+
+
+        elif metodo == 2:
+            print("Resolveremos por Solucion por programacion lineal")
+
+            print("¿Desas resolver otro metodo con los mismos datos? Presiona 1 para si 0 para no")
+            while True:
+                try:
+                    otro_metodo = int(input(""))
+                    if (otro_metodo == 1 or otro_metodo == 0 ):
+                        break
+
+                    else:
+                        print("Por favor digita un numero valido")
+
+                except ValueError:
+                    print("Por favor digita un numero valido")
+        elif metodo == 3:
+            print("Resolveremos por Metodos de mejoramiento de politicas")
+
+            mejoramientoPolitica(m,k, s, matriztrans, politica, costos)
+
+            print("¿Desas resolver otro metodo con los mismos datos? Presiona 1 para si 0 para no")
+            while True:
+                try:
+                    otro_metodo = int(input(""))
+                    if (otro_metodo == 1 or otro_metodo == 0 ):
+                        break
+
+                    else:
+                        print("Por favor digita un numero valido")
+
+                except ValueError:
+                    print("Por favor digita un numero valido")
+        elif metodo == 4:
+            print("Resolveremos por Mejoramiento de politica con descuento")
+
+            mejoramientoPoliticaDescuento(m,k,s,matriztrans,politica,costos)
+
+            print("¿Desas resolver otro metodo con los mismos datos? Presiona 1 para si 0 para no")
+            while True:
+                try:
+                    otro_metodo = int(input(""))
+                    if (otro_metodo == 1 or otro_metodo == 0 ):
+                        break
+
+                    else:
+                        print("Por favor digita un numero valido")
+                except ValueError:
+                    print("Por favor digita un numero valido")
+        elif metodo == 5:
+            print("Resolveremos por Metodo de aproximaciones sucesivas")
+
+            print("¿Desas resolver otro metodo con los mismos datos? Presiona 1 para si 0 para no")
+            while True:
+                try:
+                    otro_metodo = int(input(""))
+                    if (otro_metodo == 1 or otro_metodo == 0 ):
+                        break
+                    else:
+                        print("Por favor digita un numero valido")
+                except ValueError:
+                    print("Por favor digita un numero valido")
+
 
 
 if __name__ == "__main__":
