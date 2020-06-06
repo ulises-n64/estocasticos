@@ -168,8 +168,6 @@ def mejoramientoPolitica():
         print("Nueva politica ", polArb)
         if(banderita==0):
             stop=1
-            print(stop)
-
     return 
 
 mejoramientoPolitica() 
