@@ -1,9 +1,11 @@
+from MejoramientoPoliticaDescuento import mejoramientoPoliticaDescuento
+
+from MejoramientoPolitica import mejoramientoPolitica
 #from (nombre archivo) import (nombre funcion)
 import numpy as np
-from fractions import Fraction #Para aceptar fracciones en la entrada
+from fractions import Fraction
 
-from PoliticaMejoramiento import mejoramientoPolitica
-from PoliticaDescuento import mejoramientoPoliticaDescuento
+ #Para aceptar fracciones en la entrada
 
 def input_int(message=""):
     return int(input(message))
@@ -110,4 +112,5 @@ def main():
 
 
 if __name__ == "__main__":
+    lectura_datos()
     main()
