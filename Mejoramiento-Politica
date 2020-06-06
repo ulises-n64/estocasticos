@@ -165,9 +165,9 @@ def mejoramientoPolitica():
                 n=n+1
                 for i in range(m):
                     polArb[i]=mejorpolitica[i]
-        print("Nueva politica ", polArb)
         if(banderita==0):
             stop=1
+            print("La politica optima es: ", mejorpolitica)
     return 
 
 mejoramientoPolitica() 
