@@ -20,8 +20,21 @@ def main():
     print("3. Metodos de mejoramiento de politicas")
     print("4. Mejoramiento de politica con descuento")
     print("5. Metodo de aproximaciones sucesivas")
-   
-    metodo = input_int("")
+    while True:
+        try:
+            metodo = int(input(""))
+            if (metodo == 1 or metodo == 2 or metodo == 3 or metodo == 4 or metodo == 5):
+                break
+                
+            else:
+                print("Por favor digita un numero valido")
+                
+            
+
+        except ValueError:
+            print("Por favor digita un numero valido")
+
+
 
     if metodo == 1:
         print("Resolveremos por Enumeracion exhaustiva de politicas")
@@ -34,8 +47,6 @@ def main():
     elif metodo == 5:
         print("Resolveremos por Metodo de aproximaciones sucesivas")
       
-    else:
-        print("No es una opcion valida por favor digite un numero de 1-5")
 
 
 if __name__ == "__main__":
