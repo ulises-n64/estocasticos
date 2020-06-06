@@ -19,6 +19,13 @@ s='s'
 
 def lectura_datos():
     global m, k, matriztrans, politica, costos, s
+    print("Por:")
+    print("Rangel Huerta Alejandra")
+    print("Hernandez Martinez Abraham")
+    print("Ramiréz Calnacasco Ulises")
+    print("Soto Aguilar Ethel\n")
+
+    print("Procederemos a capturar los datos de tu problema:\n")
     
     m=int(input("Cuantos estados tienes?\n"))
     m=m+1 #Los estados deben ser m+1
@@ -63,13 +70,7 @@ def lectura_datos():
     costos=np.array(costos) #Convertimos a numpy array
     return (k, m, s, matriztrans, politica, costos)
 def main():
-    print("Por:")
-    print("Rangel Huerta Alejandra")
-    print("Hernandez Martinez Abraham")
-    print("Ramiréz Calnacasco Ulises")
-    print("Soto Aguilar Ethel")
-
-    print()
+    
 
     print("Hola usuario.")
     print("¿Qué metodo quieres resolver hoy?")
@@ -100,11 +101,11 @@ def main():
         print("Resolveremos por Solucion por programacion lineal")
     elif metodo == 3:
         print("Resolveremos por Metodos de mejoramiento de politicas")
-        lectura_datos()
+        
         mejoramientoPolitica(m,k, s, matriztrans, politica, costos)
     elif metodo == 4:
         print("Resolveremos por Mejoramiento de politica con descuento")
-        lectura_datos()
+        
         mejoramientoPoliticaDescuento(m,k,s,matriztrans,politica,costos)
     elif metodo == 5:
         print("Resolveremos por Metodo de aproximaciones sucesivas")
@@ -112,5 +113,6 @@ def main():
 
 
 if __name__ == "__main__":
+    
     lectura_datos()
     main()
