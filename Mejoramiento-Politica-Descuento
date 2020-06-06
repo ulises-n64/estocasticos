@@ -3,53 +3,9 @@ from fractions import Fraction #Para aceptar fracciones en la entrada
 from sympy import Matrix, linsolve, symbols
 import math
 
-
 #Método de Mejoramiento de políticas con descuento
-def mejoramientoPoliticaDescuento():
-    m=int(input("Cuantos estados tienes?\n"))
-    m=m+1 #Los estados deben ser m+1
-    k=int(input("Cuantas decisiones tienes?\n")) #Leemos las decisiones(k)
-    print("¿Es un problema maximizado o minimizado? Escribe max o min ")
-    s=input()
-    max=[]
-    min=[]
+def mejoramientoPoliticaDescuento(m,k, s, matriztrans, politica, costos):
     alpha=Fraction(input("¿Cuál es el factor de descuento? "))
-    
-    #Inicializamos la matriz de mxm con 0's
-    matriztrans=[] #Definimos la matriz de costos
-    politica=[] #Definimos la matriz
-    aux=[]
-    
-    for i in range(k):
-       aux=np.zeros((m,m)) #La matriz k de tamaño mxm se llena de 0's
-       matriztrans.append(aux) #Guardamos 
-    matriztrans=np.array(matriztrans) #Convertimos numpy array
-            
-    for i in range(m):
-        print("Escribe las decisiones que aplica al estado "+str(i)+", separado por espacios")
-        estados=list(map(int, input().split())) #Leemos los datos, solo aceptamos enteros
-        aux=np.array(estados)
-        politica.append(aux)
-    politica=np.array(politica) #Convertimos a numpy array
-    
-    c=0 #inicializamos la variable costos
-    a=[] #Guardamos los tamaños de las matrices de decisión  
-    print("Escribe los datos de la fila de la matriz de transición, separados por espacios")
-    for i in range(k):
-        for j in range(len(politica)): #De acuerdo al tamaño de la política, aunque también es m
-            if(i+1 in politica[j]): #Si la decisión k está en la política j 
-                print("Estado m="+str(j)+", Decision k="+str(i+1))
-                matriztrans[i][j]=list(map(Fraction, input().split())) #Aceptamos fracciones
-
-                
-    costos=[] #Definimos una matriz que guardará la información
-    for i in range(m):
-        for j in range(len(politica[i])): #Leemos la longitud de cada matriz de Politca. TIP: politica[i][j]
-            print("Escribe el costo de C"+str(i)+str(politica[i][j]))
-            c=float(input())#Leemos costos
-            costos.append(c) #Agregamos a la lista
-
-    costos=np.array(costos) #Convertimos a numpy array
     #Empezamos el algoritmo    
     polArb=[x[0] for x in politica] #Se toma la primera decisión que hay en cada estado
     print("La política arbitraria inicial es: R0"+str(polArb)+"") #Politica arbitraria
@@ -158,7 +114,3 @@ def mejoramientoPoliticaDescuento():
             stop=1
             print("La política óptima es: ", mejorpolitica)
     return 
-
-mejoramientoPoliticaDescuento() 
- 
-
