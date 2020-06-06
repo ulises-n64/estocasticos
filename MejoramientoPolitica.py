@@ -125,4 +125,3 @@ def mejoramientoPolitica(m,k, s, matriztrans, politica, costos):
         if(banderita==0):
             stop=1
     return 
-

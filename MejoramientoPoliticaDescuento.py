@@ -114,4 +114,3 @@ def mejoramientoPoliticaDescuento(m,k, s, matriztrans, politica, costos):
             stop=1
             print("La política óptima es: ", mejorpolitica)
     return 
-
