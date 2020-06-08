@@ -78,15 +78,18 @@ def ppl():
     mat_j=np.array(mat_j)
     temp_j=[]
     for i in range (len(mat_j)):
-        
+        print ("\nJ={}\n".format(i+1))
         for j in range (len(mat_j[i])):
             temp_j.append(mat_j[i,j])
             
         
-        print("\nJ={}\n{} ".format(i+1,
-            "".join([" ({})y{}{} +".format(val, i+1,j+1)
-                    for j, val in enumerate(temp_j)])[:-1]
-                ))
+        print("{} {} {} ".format(
+            "".join([" ({})y{}{} +".format(mat_j[i,j], i+1,j+1)
+            for j in range(decisiones)
+                    ])[:-1],
+            "=",
+            "0"                
+            ))
     
 
     print("\nYik >=0 ")
