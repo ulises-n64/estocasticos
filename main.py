@@ -1,6 +1,7 @@
 from MejoramientoPoliticaDescuento import mejoramientoPoliticaDescuento
 
 from MejoramientoPolitica import mejoramientoPolitica
+from EnumeracionExahustiva import Enumeracion_Politicas
 #from (nombre archivo) import (nombre funcion)
 import numpy as np
 from fractions import Fraction
@@ -98,8 +99,10 @@ def main():
 
         if metodo == 1:
             print("Resolveremos por Enumeracion exhaustiva de politicas")
-
-            print("¿Desas resolver otro metodo con los mismos datos? Presiona 1 para si 0 para no")
+            
+            Enumeracion_Politicas(m,k, s, matriztrans, politica, costos)
+            
+            print("¿Desas resolver otro metodo con los mismos datos? Presiona 1 para si, 0 para no")
             while True:
                 try:
                     otro_metodo = int(input(""))
@@ -116,7 +119,7 @@ def main():
         elif metodo == 2:
             print("Resolveremos por Solucion por programacion lineal")
 
-            print("¿Desas resolver otro metodo con los mismos datos? Presiona 1 para si 0 para no")
+            print("¿Desas resolver otro metodo con los mismos datos? Presiona 1 para si, 0 para no")
             while True:
                 try:
                     otro_metodo = int(input(""))
@@ -133,7 +136,7 @@ def main():
 
             mejoramientoPolitica(m,k, s, matriztrans, politica, costos)
 
-            print("¿Desas resolver otro metodo con los mismos datos? Presiona 1 para si 0 para no")
+            print("¿Desas resolver otro metodo con los mismos datos? Presiona 1 para si, 0 para no")
             while True:
                 try:
                     otro_metodo = int(input(""))
@@ -150,7 +153,7 @@ def main():
 
             mejoramientoPoliticaDescuento(m,k,s,matriztrans,politica,costos)
 
-            print("¿Desas resolver otro metodo con los mismos datos? Presiona 1 para si 0 para no")
+            print("¿Desas resolver otro metodo con los mismos datos? Presiona 1 para si, 0 para no")
             while True:
                 try:
                     otro_metodo = int(input(""))
@@ -164,7 +167,7 @@ def main():
         elif metodo == 5:
             print("Resolveremos por Metodo de aproximaciones sucesivas")
 
-            print("¿Desas resolver otro metodo con los mismos datos? Presiona 1 para si 0 para no")
+            print("¿Desas resolver otro metodo con los mismos datos? Presiona 1 para si 0, para no")
             while True:
                 try:
                     otro_metodo = int(input(""))
