@@ -15,12 +15,32 @@ def aproximacionSucesiva(m,k, s, matriztrans, politica, costos):
     
     
     print("Dime tu error de tolerancia:\n")
-    error=float(input(""))
+    while True:
+        try:
+            error=float(input(""))     
+            break
+        except ValueError:
+            print("Por favor digita un numero")
+
+    
     print("Dime tu factor de descuento\n")
-    descuento=float(input(""))
+    while True:
+        try:
+            descuento=float(input(""))    
+            break
+        except ValueError:
+            print("Por favor digita un numero")
+    
     
     print("Dame tu numero maximo de iteraciones:\n")
-    n=int(input(""))
+    while True:
+        try:
+            n=int(input(""))  
+            break
+        except ValueError:
+            print("Por favor digita un numero entero")
+
+
     
     
 

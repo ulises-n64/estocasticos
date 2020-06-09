@@ -108,10 +108,14 @@ def main():
             
             Enumeracion_Politicas(m,k, s, matriztrans, politica, costos)
             
-            print("¿Desas resolver otro metodo con los mismos datos? Presiona 1 para si, 0 para no")
+            print("¿Desas resolver otro metodo con los mismos datos? Presiona 1 para si, 2 para no, 0 para cerrar el programa")
             while True:
                 try:
                     otro_metodo = int(input(""))
+                    if (otro_metodo==2):
+                       
+                        lectura_datos()
+                        main()
                     if (otro_metodo == 1 or otro_metodo == 0 ):
                         break
 
@@ -125,10 +129,14 @@ def main():
         elif metodo == 2:
             print("Plantearemos el PPL")
             ppl(m,k, matriztrans, costos)
-            print("¿Desas resolver otro metodo con los mismos datos? Presiona 1 para si, 0 para no")
+            print("¿Desas resolver otro metodo con los mismos datos? Presiona 1 para si, 2 para no, 0 para cerrar el programa")
             while True:
                 try:
                     otro_metodo = int(input(""))
+                    if (otro_metodo==2):
+                       
+                        lectura_datos()
+                        main()
                     if (otro_metodo == 1 or otro_metodo == 0 ):
                         break
 
@@ -142,10 +150,14 @@ def main():
 
             mejoramientoPolitica(m,k, s, matriztrans, politica, costos)
 
-            print("¿Desas resolver otro metodo con los mismos datos? Presiona 1 para si, 0 para no")
+            print("¿Desas resolver otro metodo con los mismos datos? Presiona 1 para si, 2 para no y 0 para cerrar el programa")
             while True:
                 try:
                     otro_metodo = int(input(""))
+                    if (otro_metodo==2):
+                       
+                        lectura_datos()
+                        main()
                     if (otro_metodo == 1 or otro_metodo == 0 ):
                         break
 
@@ -159,10 +171,14 @@ def main():
 
             mejoramientoPoliticaDescuento(m,k,s,matriztrans,politica,costos)
 
-            print("¿Desas resolver otro metodo con los mismos datos? Presiona 1 para si, 0 para no")
+            print("¿Desas resolver otro metodo con los mismos datos? Presiona 1 para si, 2 para no y 0 para cerrar el programa")
             while True:
                 try:
                     otro_metodo = int(input(""))
+                    if (otro_metodo==2):
+                       
+                        lectura_datos()
+                        main()
                     if (otro_metodo == 1 or otro_metodo == 0 ):
                         break
 
@@ -174,10 +190,14 @@ def main():
             print("Resolveremos por Metodo de aproximaciones sucesivas")
             aproximacionSucesiva(m,k, s, matriztrans, politica, costos)
 
-            print("¿Desas resolver otro metodo con los mismos datos? Presiona 1 para si 0, para no")
+            print("¿Desas resolver otro metodo con los mismos datos? Presiona 1 para si, 2 para no y 0 para cerrar el programa")
             while True:
                 try:
                     otro_metodo = int(input(""))
+                    if (otro_metodo==2):
+                       
+                        lectura_datos()
+                        main()
                     if (otro_metodo == 1 or otro_metodo == 0 ):
                         break
                     else:
