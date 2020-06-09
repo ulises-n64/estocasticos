@@ -1,6 +1,8 @@
 from MejoramientoPoliticaDescuento import mejoramientoPoliticaDescuento
 
 from MejoramientoPolitica import mejoramientoPolitica
+
+from AproximacionSucesiva import aproximacionSucesiva
 #from (nombre archivo) import (nombre funcion)
 import numpy as np
 from fractions import Fraction
@@ -163,6 +165,7 @@ def main():
                     print("Por favor digita un numero valido")
         elif metodo == 5:
             print("Resolveremos por Metodo de aproximaciones sucesivas")
+            aproximacionSucesiva(m,k, s, matriztrans, politica, costos)
 
             print("¿Desas resolver otro metodo con los mismos datos? Presiona 1 para si 0 para no")
             while True:
