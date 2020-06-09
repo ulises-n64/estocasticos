@@ -1,15 +1,10 @@
 import numpy as np
 
-
-
 def ppl(m,k, matriztrans, costos):
-
-
    
     matriztrans=np.array(matriztrans)
     costos = np.array(costos)
     
-
 
     #print("\nLlenemos las {} matrices de transición\n".format(n_matrices))
     '''
@@ -17,7 +12,6 @@ def ppl(m,k, matriztrans, costos):
         lista_matrices_t=[]
         datos_extraidos = []
         print ("\nDe la matriz {}".format(i+1))
-
         for j in np.arange(m):
             temp_rest = []
             datos_extraidos=[]
@@ -25,7 +19,6 @@ def ppl(m,k, matriztrans, costos):
                 temp_rest.append(float(input(
                     "Dime el valor en la posicion ({},{}): ".format(j+1, k+1)
                     )))
-
             lista_matrices_t.append(temp_rest)
         lista_matrices_t=np.array(lista_matrices_t)
         print("\nLa matriz {} de transicion queda: \n".format(i+1))
@@ -45,11 +38,9 @@ def ppl(m,k, matriztrans, costos):
     contador=0
     temp=[]
     for i in range(len(costos)):
- 
-        for j in range (len(costos[i])):
-            temp.append(costos[:,contador])
-            contador=contador +1
-        print("{}{} ".format("\nMinZ=",
+        temp.append(costos[i])
+    
+    print("{}{} ".format("\nMinZ=",
             "".join([" ({})y{}{} +".format(val, i+1,index+1)
                      for index, val in enumerate(temp)])[:-1]
             ))
