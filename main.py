@@ -128,7 +128,7 @@ def main():
 
         elif metodo == 2:
             print("Plantearemos el PPL")
-            ppl(m,k, matriztrans, costos)
+            ppl(m,k, matriztrans, costos, s)
             print("¿Desas resolver otro metodo con los mismos datos? Presiona 1 para si, 2 para no, 0 para cerrar el programa")
             while True:
                 try:

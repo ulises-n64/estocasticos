@@ -4,11 +4,11 @@ def solucion_lineal(m,k,costos,matriztrans):
     c = []
     b = [1]
     a = []
-    unos = []
+    mat_unos = []
     for i in range(m):
         for i in range(k):
-            unos.append(1)
-    a.append(unos[:])
+            mat_unos.append(1)
+    a.append(mat_unos[:])
    
     for i in range(m):
         for j in range(k):
@@ -20,16 +20,16 @@ def solucion_lineal(m,k,costos,matriztrans):
     for j in range(m):
         ecuacion = []
         for i in range(m):
-            for w in range(k):
+            for x in range(k):
                 
                 if j == i:
-                    ecuacion.append(1-matriztrans[w][i][j])
+                    ecuacion.append(1-matriztrans[x][i][j])
                 else:
-                    ecuacion.append(-matriztrans[w][i][j])
+                    ecuacion.append(-matriztrans[x][i][j])
         a.append(ecuacion[:])                    
     return np.array(a),np.array(b),np.array(c)
 
-def ppl(m,k, matriztrans, costos):
+def ppl(m,k, matriztrans, costos, s):
    
     matriztrans=np.array(matriztrans)
     costos = np.array(costos)
@@ -84,5 +84,9 @@ def ppl(m,k, matriztrans, costos):
     print("\nYik >=0 ")
 
     A,b,c = solucion_lineal(m,k,costos,matriztrans)
-    res = linprog(-c,A_eq = A, b_eq = b)    
-    print(res)
+    if s=="max":
+        res = linprog(-c,A_eq = A, b_eq = b)    
+        print(res)
+    else:
+        res = linprog(c,A_eq = A, b_eq = b)    
+        print(res)
