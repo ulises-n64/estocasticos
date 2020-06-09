@@ -8,14 +8,11 @@ def Enumeracion_Politicas(m,k, s, matriztrans, politica, costos):
        # Empezamos el algoritmo    
     
     permutaciones=[]
-    if k==2:
-        matrizDes=[1,2]
-    if k==3:
-        matrizDes=[1,2,3]
-    if k==4:
-        matrizDes=[1,2,3,4]
-
-    mat=matrizDes
+    mat=[]
+    for i in range(k):
+        mat.append(i)
+    mat=np.array(mat)
+    
     
     for c in product(mat, repeat=m):
         permutaciones.append(c)     
@@ -130,10 +127,10 @@ def Enumeracion_Politicas(m,k, s, matriztrans, politica, costos):
      
 
     if(s=='min' or s=='MIN'):
-        sol=np.amin(resultado)  
+        sol=np.min(resultado)  
         print("La solucion optima minima es:",sol)
     if(s=='max' or s=='MAX'):
-        sol2=np.amax(resultado)  
+        sol2=np.max(resultado)  
         print("La solucion optima maxima es:", sol2)     
         
         
