@@ -1,38 +1,38 @@
 import numpy as np
-
-
+from scipy.optimize import linprog
+def solucion_lineal(m,k,costos,matriztrans):
+    c = []
+    b = [1]
+    a = []
+    unos = []
+    for i in range(m):
+        for i in range(k):
+            unos.append(1)
+    a.append(unos[:])
+   
+    for i in range(m):
+        for j in range(k):
+            c.append(costos[i])
+   
+    for i in range(m):
+        b.append(0)
+   
+    for j in range(m):
+        ecuacion = []
+        for i in range(m):
+            for w in range(k):
+                
+                if j == i:
+                    ecuacion.append(1-matriztrans[w][i][j])
+                else:
+                    ecuacion.append(-matriztrans[w][i][j])
+        a.append(ecuacion[:])                    
+    return np.array(a),np.array(b),np.array(c)
 
 def ppl(m,k, matriztrans, costos):
-
-
    
     matriztrans=np.array(matriztrans)
     costos = np.array(costos)
-    
-
-
-    #print("\nLlenemos las {} matrices de transición\n".format(n_matrices))
-    '''
-    for i in np.arange(n_matrices):
-        lista_matrices_t=[]
-        datos_extraidos = []
-        print ("\nDe la matriz {}".format(i+1))
-
-        for j in np.arange(m):
-            temp_rest = []
-            datos_extraidos=[]
-            for k in np.arange(k):
-                temp_rest.append(float(input(
-                    "Dime el valor en la posicion ({},{}): ".format(j+1, k+1)
-                    )))
-
-            lista_matrices_t.append(temp_rest)
-        lista_matrices_t=np.array(lista_matrices_t)
-        print("\nLa matriz {} de transicion queda: \n".format(i+1))
-        print(lista_matrices_t,"\n")
-        print("{}".format(lista_matrices_t[i)]''' 
-
-
 
     print("\nArmando el PPL queda de la siguiente forma: \n")
 
@@ -42,16 +42,12 @@ def ppl(m,k, matriztrans, costos):
         ))
 
     #Funcion objetivo
-    contador=0
     temp=[]
     for i in range(len(costos)):
- 
-        for j in range (len(costos[i])):
-            temp.append(costos[:,contador])
-            contador=contador +1
-        print("{}{} ".format("\nMinZ=",
+        temp.append(costos[i])
+    print("{}{} ".format("\nMinZ=",
             "".join([" ({})y{}{} +".format(val, i+1,index+1)
-                     for index, val in enumerate(temp)])[:-1]
+                    for index, val in enumerate(costos)])[:-1]
             ))
         
     #Restricciones
@@ -86,3 +82,7 @@ def ppl(m,k, matriztrans, costos):
     
 
     print("\nYik >=0 ")
+
+    A,b,c = solucion_lineal(m,k,costos,matriztrans)
+    res = linprog(-c,A_eq = A, b_eq = b)    
+    print(res)
