@@ -2,6 +2,7 @@ from MejoramientoPoliticaDescuento import mejoramientoPoliticaDescuento
 
 from MejoramientoPolitica import mejoramientoPolitica
 from EnumeracionExahustiva import Enumeracion_Politicas
+from ejercicio_ppl import ppl
 #from (nombre archivo) import (nombre funcion)
 import numpy as np
 from fractions import Fraction
@@ -118,7 +119,7 @@ def main():
 
         elif metodo == 2:
             print("Plantearemos el PPL")
-
+            ppl(m,k, matriztrans, costos)
             print("¿Desas resolver otro metodo con los mismos datos? Presiona 1 para si, 0 para no")
             while True:
                 try:

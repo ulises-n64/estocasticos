@@ -1,20 +1,13 @@
 import numpy as np
 
 
-def input_int(message=""):
-    return int(input(message))
+
+def ppl(m,k, matriztrans, costos):
 
 
-def ppl():
-
-    estados = 3
-    decisiones = 3
-    n_matrices = 3
-
-    mat_trans = [[0.4,0.5,0.1],[0.1,0.7,0.2],[0.1,0.2,0.7]]
-    mat_costos = [[280, 220, -130]]
-    mat_trans=np.array(mat_trans)
-    mat_costos = np.array(mat_costos)
+   
+    matriztrans=np.array(matriztrans)
+    costos = np.array(costos)
     
 
 
@@ -25,10 +18,10 @@ def ppl():
         datos_extraidos = []
         print ("\nDe la matriz {}".format(i+1))
 
-        for j in np.arange(estados):
+        for j in np.arange(m):
             temp_rest = []
             datos_extraidos=[]
-            for k in np.arange(decisiones):
+            for k in np.arange(k):
                 temp_rest.append(float(input(
                     "Dime el valor en la posicion ({},{}): ".format(j+1, k+1)
                     )))
@@ -45,16 +38,16 @@ def ppl():
 
     print("Yik = {}".format(
             "".join([" Y{}{} +".format(i+1, j+1)
-                     for i in range(estados) for j in range(len(mat_trans[i]))])[:-1]
+                     for i in range(m) for j in range (len(matriztrans))])[:-1]
         ))
 
     #Funcion objetivo
     contador=0
     temp=[]
-    for i in range(len(mat_costos)):
+    for i in range(len(costos)):
  
-        for j in range (len(mat_costos[i])):
-            temp.append(mat_costos[:,contador])
+        for j in range (len(costos[i])):
+            temp.append(costos[:,contador])
             contador=contador +1
         print("{}{} ".format("\nMinZ=",
             "".join([" ({})y{}{} +".format(val, i+1,index+1)
@@ -65,14 +58,14 @@ def ppl():
     print ("s.a")
     print("     {} {} {}".format(
             "".join([" Y{}{} +".format(i+1, j+1)
-                     for i in range(estados) for j in range(len(mat_trans))])[:-1],
+                     for i in range(m) for j in range(len(matriztrans))])[:-1],
             "=",
             "1"
         ))
 
    
     #Armar las j
-    mat_j = np.transpose(mat_trans)
+    mat_j = np.transpose(matriztrans)
     mat_j[:,0]=mat_j[:,0]-1
     mat_j=(-1)*mat_j
     mat_j=np.array(mat_j)
@@ -85,7 +78,7 @@ def ppl():
         
         print("{} {} {} ".format(
             "".join([" ({})y{}{} +".format(mat_j[i,j], i+1,j+1)
-            for j in range(decisiones)
+            for j in range(m)
                     ])[:-1],
             "=",
             "0"                
@@ -93,21 +86,3 @@ def ppl():
     
 
     print("\nYik >=0 ")
-    
-            
-        
-
-            
-            
-
-
-
-
-
-
-
-
-
-
-if __name__ == "__main__":
-    ppl()
