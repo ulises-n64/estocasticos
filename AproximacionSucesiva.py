@@ -175,7 +175,7 @@ def aproximacionSucesiva(m,k, s, matriztrans, politica, costos):
         iteracion=0
         error_maximo=10**8
         
-        while(iteracion <= n or error_maximo<error):
+        while(iteracion <= n and error_maximo>error):
             k_vni=[]
             newoptima=[]
             k_minimo=[]
