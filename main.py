@@ -2,7 +2,12 @@ from MejoramientoPoliticaDescuento import mejoramientoPoliticaDescuento
 
 from MejoramientoPolitica import mejoramientoPolitica
 
+
 from AproximacionSucesiva import aproximacionSucesiva
+
+from EnumeracionExahustiva import Enumeracion_Politicas
+from ejercicio_ppl import ppl
+
 #from (nombre archivo) import (nombre funcion)
 import numpy as np
 from fractions import Fraction
@@ -78,7 +83,7 @@ def main():
         print("Hola usuario.")
         print("¿Qué metodo quieres resolver hoy?")
         print("1. Enumeracion exhaustiva de politicas")
-        print("2. Solucion por programacion lineal")
+        print("2. Plantear el modelo de programacion lineal")
         print("3. Metodos de mejoramiento de politicas")
         print("4. Mejoramiento de politica con descuento")
         print("5. Metodo de aproximaciones sucesivas")
@@ -100,8 +105,10 @@ def main():
 
         if metodo == 1:
             print("Resolveremos por Enumeracion exhaustiva de politicas")
-
-            print("¿Desas resolver otro metodo con los mismos datos? Presiona 1 para si 0 para no")
+            
+            Enumeracion_Politicas(m,k, s, matriztrans, politica, costos)
+            
+            print("¿Desas resolver otro metodo con los mismos datos? Presiona 1 para si, 0 para no")
             while True:
                 try:
                     otro_metodo = int(input(""))
@@ -116,9 +123,9 @@ def main():
 
 
         elif metodo == 2:
-            print("Resolveremos por Solucion por programacion lineal")
-
-            print("¿Desas resolver otro metodo con los mismos datos? Presiona 1 para si 0 para no")
+            print("Plantearemos el PPL")
+            ppl(m,k, matriztrans, costos)
+            print("¿Desas resolver otro metodo con los mismos datos? Presiona 1 para si, 0 para no")
             while True:
                 try:
                     otro_metodo = int(input(""))
@@ -135,7 +142,7 @@ def main():
 
             mejoramientoPolitica(m,k, s, matriztrans, politica, costos)
 
-            print("¿Desas resolver otro metodo con los mismos datos? Presiona 1 para si 0 para no")
+            print("¿Desas resolver otro metodo con los mismos datos? Presiona 1 para si, 0 para no")
             while True:
                 try:
                     otro_metodo = int(input(""))
@@ -152,7 +159,7 @@ def main():
 
             mejoramientoPoliticaDescuento(m,k,s,matriztrans,politica,costos)
 
-            print("¿Desas resolver otro metodo con los mismos datos? Presiona 1 para si 0 para no")
+            print("¿Desas resolver otro metodo con los mismos datos? Presiona 1 para si, 0 para no")
             while True:
                 try:
                     otro_metodo = int(input(""))
@@ -167,7 +174,7 @@ def main():
             print("Resolveremos por Metodo de aproximaciones sucesivas")
             aproximacionSucesiva(m,k, s, matriztrans, politica, costos)
 
-            print("¿Desas resolver otro metodo con los mismos datos? Presiona 1 para si 0 para no")
+            print("¿Desas resolver otro metodo con los mismos datos? Presiona 1 para si 0, para no")
             while True:
                 try:
                     otro_metodo = int(input(""))
