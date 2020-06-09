@@ -87,7 +87,7 @@ def mejoramientoPolitica(m,k, s, matriztrans, politica, costos):
                 if(j+1 in politica[i]): #Si la decisión k está en la politica[i]
                     print("i= "+str(i)+" K= "+str(j+1)) 
                     aux5=resultado.dot(matriztrans[j][i])
-                    print("("+str(costos[aux6])+")+("+str(aux5)+")-("+str(resultado[0][j])+")")
+                    print("("+str(costos[aux6])+")+("+str(aux5)+")-("+str(resultado[0][i])+")")
                     aux5=costos[aux6]+aux5-resultado[0][i]
                     print("= ", aux5) 
                     aux7.append(aux5) 
@@ -117,11 +117,12 @@ def mejoramientoPolitica(m,k, s, matriztrans, politica, costos):
         for i in range(m):
             if(polArb[i]!=mejorpolitica[i]):
                 banderita=banderita+1
-            elif(banderita!=0 and i==m-1):
+            if(banderita!=0 and i==m-1):
                 n=n+1
                 for i in range(m):
                     polArb[i]=mejorpolitica[i]
-        print("Nueva politica ", polArb)
         if(banderita==0):
             stop=1
+            print("La política óptima es: ", mejorpolitica)
     return 
+

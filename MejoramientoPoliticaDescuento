@@ -106,7 +106,7 @@ def mejoramientoPoliticaDescuento(m,k, s, matriztrans, politica, costos):
         for i in range(m):
             if(polArb[i]!=mejorpolitica[i]):
                 banderita=banderita+1
-            elif(banderita!=0 and i==m-1):
+            if(banderita!=0 and i==m-1):
                 n=n+1
                 for i in range(m):
                     polArb[i]=mejorpolitica[i]

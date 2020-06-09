@@ -2,6 +2,7 @@ from MejoramientoPoliticaDescuento import mejoramientoPoliticaDescuento
 
 from MejoramientoPolitica import mejoramientoPolitica
 from EnumeracionExahustiva import Enumeracion_Politicas
+from ejercicio_ppl import ppl
 #from (nombre archivo) import (nombre funcion)
 import numpy as np
 from fractions import Fraction
@@ -77,7 +78,7 @@ def main():
         print("Hola usuario.")
         print("¿Qué metodo quieres resolver hoy?")
         print("1. Enumeracion exhaustiva de politicas")
-        print("2. Solucion por programacion lineal")
+        print("2. Plantear el modelo de programacion lineal")
         print("3. Metodos de mejoramiento de politicas")
         print("4. Mejoramiento de politica con descuento")
         print("5. Metodo de aproximaciones sucesivas")
@@ -117,8 +118,8 @@ def main():
 
 
         elif metodo == 2:
-            print("Resolveremos por Solucion por programacion lineal")
-
+            print("Plantearemos el PPL")
+            ppl(m,k, matriztrans, costos)
             print("¿Desas resolver otro metodo con los mismos datos? Presiona 1 para si, 0 para no")
             while True:
                 try:
